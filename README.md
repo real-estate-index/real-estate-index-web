@@ -1,5 +1,5 @@
 
-![버전1](https://github.com/real-estate-index/real-estate-index-web/assets/99078115/4f87b772-03fa-4c63-8577-1406cac4c6dd)
+![버전2](https://github.com/real-estate-index/real-estate-index-web/assets/99078115/bb4d12fd-0b03-4574-b1db-96c6358bea4e)
 
 
 ```terminal
