@@ -1,38 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Line } from 'react-chartjs-2';
+// 프론트 미구현
 
-function Graph() {
-  const [data, setData] = useState({});
+import React, { useEffect, useState } from 'react';
+import { Line } from 'react-chartjs-2';
+import axios from 'axios';
+
+function Graph({ title }) {
+  const [chartData, setChartData] = useState({});
 
   useEffect(() => {
-    axios.get('/api/graph')
+    axios.get(`/api/graph?title=${title}`)
       .then(response => {
-        // 데이터를 Chart.js에서 사용할 수 있는 형태로 가공합니다.
-        const chartData = {
-          labels: response.data.labels,
-          datasets: [
-            {
-              label: 'Real Estate Index',
-              data: response.data.values,
-              borderColor: 'rgba(75, 192, 192, 1)',
-              fill: false,
-            },
-          ],
-        };
-        setData(chartData);
+        setChartData(response.data);
       })
       .catch(error => {
         console.error('Error fetching graph data:', error);
       });
-  }, []);
+  }, [title]);
 
   return (
-    <div>
-      <h2>Real Estate Index Graph</h2>
-      <Line data={data} />
+    <div className="graph">
+      <h2>{title}</h2>
+      <Line data={chartData} />
     </div>
   );
 }
-
 export default Graph;

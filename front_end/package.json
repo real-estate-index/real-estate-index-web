@@ -1,14 +1,19 @@
 {
-    "name": "real_estate_frontend",
-    "version": "1.0.0",
-    "dependencies": {
-      "react": "^18.0.0",
-      "react-dom": "^18.0.0",
-      "axios": "^1.2.0"
-    },
-    "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test"
-    }
+  "name": "real_estate_frontend",
+  "version": "1.0.0",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^5.0.0",
+    "chart.js": "^4.0.0",
+    "react-chartjs-2": "^5.0.0",
+    "axios": "^1.2.0",
+    "leaflet": "^1.7.0",
+    "react-leaflet": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
   }
+}
