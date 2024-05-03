@@ -20,6 +20,7 @@ pip install django
 
 ### 프론트엔드 구성
 
+```
 front_end/
 ├── src/
 │   ├── components/
@@ -33,3 +34,4 @@ front_end/
 ├── public/
 │   ├── index.html              # 주요 HTML 파일
 ├── package.json                # 프로젝트 의존성과 스크립트
+```
