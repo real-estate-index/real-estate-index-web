@@ -1,9 +1,7 @@
 // App.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Map from './components/Map';  // 예제로 추가된 다른 컴포넌트
+import Map from './components/Map';
 import FearGreedIndex from './components/FearGreedIndex';
 import RegionDetails from './components/RegionDetails';
 import Graph from './components/Graph';
