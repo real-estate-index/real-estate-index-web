@@ -17,6 +17,9 @@ function App() {
         <div className="widget fear-greed-index">
           <FearGreedIndex />
         </div>
+        <div className="widget region-details">
+          <RegionDetails />
+        </div>
         <div className="widget map">
           <Map />
         </div>

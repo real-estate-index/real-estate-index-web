@@ -30,8 +30,6 @@
 }
 
 .content {
-    width: 800px; /* 지도의 전체 너비를 설정 */
-    height: 1200px; /* 지도의 전체 높이를 설정 */
     position: relative;
 }
 
