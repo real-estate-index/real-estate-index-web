@@ -23,8 +23,11 @@ function Graph() {
   }, []);
 
   return (
-    <div>
-      <canvas ref={chartRef}></canvas>
+    <div className="rectangle">
+      <h2 className="text-style">Graph</h2>
+      <div className="content">
+        <canvas ref={chartRef}></canvas>
+      </div>
     </div>
   );
 }

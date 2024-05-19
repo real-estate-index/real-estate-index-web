@@ -1,5 +1,3 @@
-// 프론트 미구현
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -17,13 +15,15 @@ function RegionDetails() {
   }, []);
 
   return (
-    <div className="region-details">
-      <h2>Region Details</h2>
-      <ul>
-        {regionDetails.map(detail => (
-          <li key={detail.name}>{detail.name}</li>
-        ))}
-      </ul>
+    <div className="rectangle">
+      <h2 className="text-style">Region Details</h2>
+      <div className="content">
+        <ul>
+          {regionDetails.map(detail => (
+            <li key={detail.name}>{detail.name}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
