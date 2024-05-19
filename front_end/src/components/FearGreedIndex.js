@@ -13,9 +13,11 @@ function FearGreedIndex() {
   }, []);
 
   return (
-    <div>
-      <h1>Fear & Greed Index</h1>
-      {indexData ? <p>Index Value: {indexData.value}</p> : <p>Loading...</p>}
+    <div className="rectangle">
+      <h2 className="text-style">Fear & Greed Index</h2>
+      <div className="content">
+        {indexData ? <p>Index Value: {indexData.value}</p> : <p>Loading...</p>}
+      </div>
     </div>
   );
 }

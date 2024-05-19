@@ -1,0 +1,28 @@
+.map-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.header {
+    background: #F8FAFB;
+    text-align: center;
+    margin: 0; /* 여백 제거 */
+    padding: 0; /* 패딩 제거 */
+}
+
+.text-style {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #000;
+    margin: 10px 0; /* 상하 여백 설정 */
+}
+
+.error-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.error-message {
+    color: red;
+}

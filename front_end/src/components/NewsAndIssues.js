@@ -34,32 +34,35 @@ function NewsAndIssues() {
   };
 
   return (
-    <div>
-      <div>
-        <h3>뉴스</h3>
-        <button onClick={() => handleCategoryClick('news')}>뉴스 보기</button>
-        {activeCategory === 'news' && (
-          <ul>
-            {news.map((item, index) => (
-              <li key={index}>
-                <button onClick={() => handleItemClick(item.link)}>{item.title}</button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-      <div>
-        <h3>다음 이슈</h3>
-        <button onClick={() => handleCategoryClick('issues')}>다음 이슈 보기</button>
-        {activeCategory === 'issues' && (
-          <ul>
-            {issues.map((item, index) => (
-              <li key={index}>
-                <button onClick={() => handleItemClick(item.link)}>{item.title}</button>
-              </li>
-            ))}
-          </ul>
-        )}
+    <div className="rectangle">
+      <h2 className="text-style">News & Issues</h2>
+      <div className="content">
+        <div>
+          <h3>뉴스</h3>
+          <button onClick={() => handleCategoryClick('news')}>뉴스 보기</button>
+          {activeCategory === 'news' && (
+            <ul>
+              {news.map((item, index) => (
+                <li key={index}>
+                  <button onClick={() => handleItemClick(item.link)}>{item.title}</button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div>
+          <h3>다음 이슈</h3>
+          <button onClick={() => handleCategoryClick('issues')}>다음 이슈 보기</button>
+          {activeCategory === 'issues' && (
+            <ul>
+              {issues.map((item, index) => (
+                <li key={index}>
+                  <button onClick={() => handleItemClick(item.link)}>{item.title}</button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );
