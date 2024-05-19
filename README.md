@@ -37,8 +37,9 @@ front_end/
 
 ### 프론트엔드 실행하기
 
-1. npm 설치하기
+#### 1. npm 설치하기
 
+아래 명령어를 입력하서 npm을 설치합니다.
 ```terminal
 npm install --legacy-peer-deps
 ```
@@ -74,8 +75,16 @@ To address all issues (including breaking changes), run:
 Run `npm audit` for details.
 ```
 
+#### 2. npm 실행하기
+
+1. npm은 front_end 폴더 위치에서 실행해야 합니다.
+
+    ```
+    cd front_end
+    ```
+  
 2. 이후 프론트 서버를 실행하기 위해 터미널에 아래 명령어를 입력합니다.
 
-```
-npm start
-```
+    ```
+    npm start
+    ```
