@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News and Issues</title>
+    <style>
+        .measuring-instrument-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .measuring-instrument {
+            position: relative;
+            width: 700px;
+            height: 350px;
+            background: #fff;
+            border-radius: 350px 350px 0 0;
+            border: 2px solid #000;
+            overflow: hidden;
+        }
+        .needle {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 320px solid black;
+            transform-origin: bottom center;
+            transform: translateX(-50%) rotate(0deg);
+            transition: transform 0.5s ease-in-out;
+        }
+        .measuring-instrument-center {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            border: 2px solid #000;
+            transform: translateX(-50%) translateY(50%);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 20px;
+            box-sizing: border-box;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .labels {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+        .label {
+            display: none;
+        }
+        .graph-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .graph-container img {
+            margin: 10px;
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>News and Issues</h1>
+
+    <h2>News List</h2>
+    <ul>
+        {% for news in news_items %}
+            <li>
+                <h3>{{ news.title }}</h3>
+                <p>{{ news.description }}</p>
+                <a href="{{ news.link }}">바로가기</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Next Issues</h2>
+    <ul>
+        {% for issues in issues_items %}
+            <li>
+                <h3>{{ issues.title }}</h3>
+                <a href="{{ issues.link }}">바로가기</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="measuring-instrument-container">
+        <h2>공포-탐욕 인덱스</h2>
+        <div class="measuring-instrument">
+            <div class="needle" id="needle"></div>
+            <div class="measuring-instrument-center" id="center-value">{{ value_item }}</div>
+            <div class="labels">
+                <span class="label" style="left: 0;">0</span>
+                <span class="label" style="left: 50%;">50</span>
+                <span class="label" style="left: 100%;">100</span>
+            </div>
+        </div>
+        <input type="range" id="indexInput" min="0" max="100" value="0">
+    </div>
+
+    <div class="graph-container">
+        {% for graph in graph_item %}
+            <img src="{{ graph.image.url }}" alt="Graph {{ forloop.counter }}">
+        {% endfor %}
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const needle = document.getElementById("needle");
+            const indexInput = document.getElementById("indexInput");
+            const centerValue = document.getElementById("center-value");
+
+            const valueItem = {{ value_item }};
+            const initialDegree = (valueItem / 100) * 180 - 90;
+            needle.style.transform = `translateX(-50%) rotate(${initialDegree}deg)`;
+            centerValue.textContent = valueItem;
+
+            indexInput.addEventListener("input", function() {
+                const index = indexInput.value;
+                const degree = (index / 100) * 180 - 90;
+                needle.style.transform = `translateX(-50%) rotate(${degree}deg)`;
+                centerValue.textContent = index;
+            });
+        });
+    </script>
+</body>
+</html>
