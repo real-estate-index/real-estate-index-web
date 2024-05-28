@@ -1,7 +1,7 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('real_estate_app.urls')),
+    path('api/fear-greed-index', views.fear_greed_index, name='fear-greed-index'),
+    path('api/news-and-issues/', views.news_and_issues, name='news-and-issues')
 ]

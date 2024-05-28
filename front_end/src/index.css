@@ -1,3 +1,4 @@
+/* index.css */
 /* General Styles */
 body {
     font-family: 'Inter', sans-serif;
@@ -31,28 +32,12 @@ body {
     padding: 20px;
 }
 
-.widget {
-    background: #FFFFFF;
-    border: 2px solid #ECEEF7;
-    box-shadow: 0px 20px 50px rgba(220, 224, 249, 0.5);
-    border-radius: 20px;
-    margin: 10px;
-    flex-basis: calc(33% - 20px);
-    padding: 20px;
-    position: relative;
-}
-
-.widget h2 {
-    font-size: 28px;
-    color: #1A2B88;
-}
-
 /* Specific Widget Examples */
 .fear-greed-index .content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px; /* Adjust height as needed */
+    height: 200px; /* Adjust height as needed */
 }
 
 .map .content {
@@ -60,7 +45,7 @@ body {
 }
 
 .news-and-issues .content {
-    height: 600px; /* Space for news articles or issues listing */
+    height: 100%; /* Set to 100% to allow flexible height */
 }
 
 .graph .content {

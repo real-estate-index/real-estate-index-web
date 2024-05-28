@@ -44,8 +44,8 @@ function Map() {
     const container = containerRef.current;
     if (container) {
       // 지도 중앙에 고정할 좌표
-      const fixedX = 550; 
-      const fixedY = 550; 
+      const fixedX = 550;
+      const fixedY = 550;
       container.scrollLeft = fixedX - container.clientWidth / 2;
       container.scrollTop = fixedY - container.clientHeight / 2;
     }

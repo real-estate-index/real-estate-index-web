@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import './NewsAndIssues.css'; // 추가적인 CSS 스타일을 적용하기 위해 CSS 파일을 임포트합니다.
 
 function NewsAndIssues() {
   const [news, setNews] = useState([]);
   const [issues, setIssues] = useState([]);
-  const [activeCategory, setActiveCategory] = useState('news'); // 활성화된 카테고리를 추적하는 상태 변수
+  const [activeCategory, setActiveCategory] = useState('news');
 
   useEffect(() => {
-    // Django에서 제공하는 API 엔드포인트
     const apiUrl = '/api/news-and-issues';
 
-    // 데이터를 가져오는 함수
     const fetchData = async () => {
       try {
         const response = await fetch(apiUrl);
@@ -21,7 +20,6 @@ function NewsAndIssues() {
       }
     };
 
-    // 데이터 가져오기
     fetchData();
   }, []);
 
@@ -30,39 +28,58 @@ function NewsAndIssues() {
   };
 
   const handleItemClick = (link) => {
-    window.open(link, '_blank'); // 새 탭에서 링크 열기
+    window.open(link, '_blank');
   };
 
   return (
-    <div className="rectangle">
-      <h2 className="text-style">News & Issues</h2>
+    <div className="news-and-issues">
+      <h2 className="title">뉴스 & 정부 보도 자료</h2>
+      <div className="category">
+        <button
+          className={`category-button ${activeCategory === 'news' ? 'active' : ''}`}
+          onClick={() => handleCategoryClick('news')}
+        >
+          뉴스 보기
+        </button>
+        <button
+          className={`category-button ${activeCategory === 'issues' ? 'active' : ''}`}
+          onClick={() => handleCategoryClick('issues')}
+        >
+          정부 보도자료 보기
+        </button>
+      </div>
       <div className="content">
-        <div>
-          <h3>뉴스</h3>
-          <button onClick={() => handleCategoryClick('news')}>뉴스 보기</button>
-          {activeCategory === 'news' && (
-            <ul>
-              {news.map((item, index) => (
-                <li key={index}>
-                  <button onClick={() => handleItemClick(item.link)}>{item.title}</button>
+        {activeCategory === 'news' && (
+          <ul className="list">
+            {news.length === 0 ? (
+              <li className="list-item">뉴스가 없습니다.</li>
+            ) : (
+              news.map((item, index) => (
+                <li key={index} className="list-item">
+                  <button onClick={() => handleItemClick(item.link)}>
+                    <div className="title">{item.title}</div>
+                    <div className="description">{item.description}</div>
+                  </button>
                 </li>
-              ))}
-            </ul>
-          )}
-        </div>
-        <div>
-          <h3>다음 이슈</h3>
-          <button onClick={() => handleCategoryClick('issues')}>다음 이슈 보기</button>
-          {activeCategory === 'issues' && (
-            <ul>
-              {issues.map((item, index) => (
-                <li key={index}>
-                  <button onClick={() => handleItemClick(item.link)}>{item.title}</button>
+              ))
+            )}
+          </ul>
+        )}
+        {activeCategory === 'issues' && (
+          <ul className="list">
+            {issues.length === 0 ? (
+              <li className="list-item">정부 보도자료가 없습니다.</li>
+            ) : (
+              issues.map((item, index) => (
+                <li key={index} className="list-item">
+                  <button onClick={() => handleItemClick(item.link)}>
+                    <div className="title">{item.title}</div>
+                  </button>
                 </li>
-              ))}
-            </ul>
-          )}
-        </div>
+              ))
+            )}
+          </ul>
+        )}
       </div>
     </div>
   );
