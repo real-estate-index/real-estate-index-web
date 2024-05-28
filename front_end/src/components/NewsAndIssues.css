@@ -1,0 +1,91 @@
+/* NewsAndIssues.css */
+
+.news-and-issues .title {
+    font-size: 28px;
+    color: #1A2B88;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.news-and-issues .category {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.news-and-issues .category-button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.news-and-issues .category-button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.news-and-issues .content {
+    max-height: 1100px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.news-and-issues .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.news-and-issues .list-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ECEEF7;
+}
+
+.news-and-issues .list-item button {
+    width: 100%;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: left;
+}
+
+.news-and-issues .list-item button:hover {
+    background-color: #e6f7ff;
+}
+
+.news-and-issues .list-item .title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #1A2B88;
+    margin-bottom: 5px;
+}
+
+.news-and-issues .list-item .description {
+    font-size: 14px;
+    color: #000;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .news-and-issues {
+        flex-basis: calc(50% - 20px);
+    }
+    .news-and-issues .content {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-and-issues {
+        flex-basis: 100%;
+    }
+    .news-and-issues .content {
+        height: 300px;
+    }
+}

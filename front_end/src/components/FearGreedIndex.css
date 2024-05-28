@@ -1,0 +1,79 @@
+.text-style {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.content {
+  text-align: center;
+  position: relative; /* Ensure relative positioning for child elements */
+}
+
+.bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* 컨테이너 사이의 간격 */
+  align-items: center; /* Center align bar-wrapper */
+}
+
+.bar-container {
+  width: 100px;
+  height: 65px;
+  border: 2px solid #000;
+  position: relative;
+}
+
+.bar {
+  width: 100%;
+  height: 100%;
+  background-color: #F7F7F7;
+}
+
+.bar-filled {
+  width: 100%;
+  height: 100%;
+  background-color: #B9EDE9; /* 원하는 색상으로 설정 */
+}
+
+.indicator {
+  position: absolute;
+  left: 255px;
+  transform: translateX(-50%) rotate(-90deg);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 60px solid #1A2B88; /* 삼각형 모양 */
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  background-color: #1A2B88;
+  border-radius: 50%;
+  margin-top: -10px; /* 삼각형과 원이 붙도록 조정 */
+}
+
+.circle2 {
+  width: 65px;
+  height: 65px;
+  background-color: white;
+  border-radius: 50%;
+  margin-top: -73px; /* Adjust based on the actual position */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.circle2 span {
+  transform: rotate(90deg); /* 글자를 90도 회전 */
+}

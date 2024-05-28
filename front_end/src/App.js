@@ -5,7 +5,7 @@ import FearGreedIndex from './components/FearGreedIndex';
 import RegionDetails from './components/RegionDetails';
 import Graph from './components/Graph';
 import NewsAndIssues from './components/NewsAndIssues';
-import './App.css'; // App.css로 스타일 시트 임포트
+import './App.css';
 
 function App() {
   return (

@@ -7,7 +7,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background: #F8FAFB;
     height: 100%;
-    overflow: hidden;
+    overflow: auto; /* 페이지 전체 스크롤 가능하도록 수정 */
 }
 
 .page-layout {
@@ -101,24 +101,25 @@ body {
 
 /* 각 컴포넌트의 크기를 별도로 설정 */
 .fear-greed-index .content {
-    width: 100%;
-    height: 50%;
+    width: 300px;
+    height: 400px;
 }
 
 .region-details .content {
-    width: 100%;
-    height: 50%;
+    width: 300px;
+    height: 200px;
 }
 
 .map .content {
-    width: 1000px; /* 지도의 전체 너비를 설정 */
-    height: 800px; /* 지도의 전체 높이를 설정 */
+    width: 1000px;
+    height: 800px;
     position: relative;
 }
 
 .news-and-issues .content {
     width: 100%;
-    height: 60%;
+    max-height: 800px;
+    overflow-y: auto; /* 스크롤 추가 */
 }
 
 .graph1 .content, .graph2 .content {
