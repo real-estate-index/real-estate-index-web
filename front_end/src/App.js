@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Map from './components/Map';
 import FearGreedIndex from './components/FearGreedIndex';
@@ -8,6 +8,14 @@ import NewsAndIssues from './components/NewsAndIssues';
 import './App.css';
 
 function App() {
+  const [selectedRegion, setSelectedRegion] = useState('1'); // 기본값 서울
+  const [regionName, setRegionName] = useState('서울'); // 기본값 서울
+
+  const handleRegionSelect = (regionId, regionName) => {
+    setSelectedRegion(regionId);
+    setRegionName(regionName);
+  };
+
   return (
     <div className="page-layout">
       <header className="header">
@@ -18,10 +26,10 @@ function App() {
           <FearGreedIndex />
         </div>
         <div className="widget region-details">
-          <RegionDetails />
+          <RegionDetails selectedRegion={selectedRegion} regionName={regionName} />
         </div>
         <div className="widget map">
-          <Map />
+          <Map onRegionSelect={handleRegionSelect} />
         </div>
         <div className="widget news-and-issues">
           <NewsAndIssues />
@@ -34,9 +42,9 @@ function App() {
         </div>
       </div>
       <Routes>
-        <Route path="/map" element={<Map />} />
+        <Route path="/map" element={<Map onRegionSelect={handleRegionSelect} />} />
         <Route path="/index" element={<FearGreedIndex />} />
-        <Route path="/details" element={<RegionDetails />} />
+        <Route path="/details" element={<RegionDetails selectedRegion={selectedRegion} regionName={regionName} />} />
         <Route path="/graph" element={<Graph />} />
         <Route path="/news" element={<NewsAndIssues />} />
       </Routes>

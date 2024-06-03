@@ -1,30 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function RegionDetails() {
-  const [regionDetails, setRegionDetails] = useState([]);
+function RegionDetails({ selectedRegion, regionName }) {
+  const [districts, setDistricts] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/region_details')
-      .then(response => {
-        setRegionDetails(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching region details:', error);
-      });
-  }, []);
+    if (selectedRegion) {
+      axios.get(`/api/regions/districts?regionId=${selectedRegion}`)
+        .then(response => {
+          setDistricts(response.data);
+        })
+        .catch(error => {
+          console.error('Error fetching district details:', error);
+        });
+    }
+  }, [selectedRegion]);
 
   return (
-    <div className="rectangle">
-      <h2 className="text-style">Region Details</h2>
+    <div className="region-details">
+      <h2 className="text-style">{regionName}의 구 목록</h2>
       <div className="content">
         <ul>
-          {regionDetails.map(detail => (
-            <li key={detail.name}>{detail.name}</li>
+          {districts.map(district => (
+            <li key={district.id}>{district.name}</li>
           ))}
         </ul>
       </div>
     </div>
   );
 }
+
 export default RegionDetails;
