@@ -1,8 +1,6 @@
 
 ![버전2](https://github.com/real-estate-index/real-estate-index-web/assets/99078115/bb4d12fd-0b03-4574-b1db-96c6358bea4e)
 
-```
-
 ### 프론트엔드 구성
 
 ```
@@ -20,6 +18,7 @@ front_end/
 │   ├── index.html              # 주요 HTML 파일
 ├── package.json                # 프로젝트 의존성과 스크립트
 ```
+
 
 # 서버 실행하는 방법
 
