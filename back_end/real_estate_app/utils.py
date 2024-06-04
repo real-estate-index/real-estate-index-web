@@ -16,8 +16,8 @@ def news_api():
     search_word = "한국 부동산" # 네이버 뉴스 검색 키워드
     display = 10 # API에서 가져올 뉴스 기사 수
     sort = "sim"
-    client_id = "{}" # 네이버 API 사용자 ID
-    client_key = "{}" # 네이버 뉴스 API 키
+    client_id = "i_8hysHrcLU2z4z2xd4S" # 네이버 API 사용자 ID
+    client_key = "7GK2gIoJ7E" # 네이버 뉴스 API 키
     url = f"https://openapi.naver.com/v1/search/news?query={search_word}&display={display}&sort={sort}" # 네이버 뉴스 API 주소
     headers = {"X-Naver-Client-Id":client_id,"X-Naver-Client-Secret":client_key} # 헤더 설정
     req = requests.get(url,headers=headers) # requests로 API 호출
