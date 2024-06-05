@@ -1,6 +1,9 @@
 
 ![버전2](https://github.com/real-estate-index/real-estate-index-web/assets/99078115/bb4d12fd-0b03-4574-b1db-96c6358bea4e)
 
+
+<img width="367" alt="완성" src="https://github.com/real-estate-index/real-estate-index-web/assets/99078115/8abd51aa-c3b3-4ae3-b25a-609046a41fc5">
+
 ### 프론트엔드 구성
 
 ```
