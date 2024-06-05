@@ -100,4 +100,4 @@ normalized_data_DT=((df_DT_standarization['standardized_DT']-min_val)/(max_val -
 df_DT_standarization['normalized_DT']=normalized_data_DT
 
 #저장하기
-df_DT_standarization.to_csv('standardized_data.csv',index=False)
+df_DT_standarization.to_csv('mind_standard_data.csv',index=False)

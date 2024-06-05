@@ -1,0 +1,77 @@
+.region-details {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .text-style-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .text-style {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .district-button {
+    background-color: #8E85FF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+  
+  .district-button:hover {
+    background-color: #b2dcff;
+    color: white;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .page-button {
+    background-color: #b2dcff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+  
+  .page-button:hover {
+    background-color: #8E85FF;
+    color: white;
+  }
+  
+  .page-button.active {
+    background-color: #8E85FF;
+    color: white;
+  }
+  

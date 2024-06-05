@@ -72,14 +72,15 @@ front_end/
     cd front_end
     ```
 
-2. 아래 명령어를 입력하서 npm을 설치합니다. 이미 
+2. 아래 명령어를 입력하서 npm을 설치합니다. 이미 설치되어있으면 다음 단계로 넘어갑니다.
 
     ```terminal
     npm install
     ```
 
     - 예시 성공화면은 아래와 같습니다.
-    ```
+
+    ```terminal
     npm WARN deprecated @types/recoil@0.0.9: This is a stub types definition. recoil provides its own type definitions, so you do not need this installed.
     npm WARN deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
     npm WARN deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
