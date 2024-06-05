@@ -17,13 +17,16 @@ function Map({ onRegionSelect }) {
   const attachClickHandlers = () => {
     document.querySelectorAll('path').forEach(path => {
       path.addEventListener('click', () => {
-        if (path.id === 'seoul') {
-          onRegionSelect('1', '서울');
-        } else if (path.id === 'incheon') {
-          onRegionSelect('2', '인천');
-        } else {
-          alert('현재 지원되지 않는 기능입니다.');
-          onRegionSelect('1', '서울'); // 기본값 서울
+        switch (path.id) {
+          case 'seoul':
+            onRegionSelect('1', '서울');
+            break;
+          case 'incheon':
+            onRegionSelect('2', '인천');
+            break;
+          // Add more cases for other regions if needed
+          default:
+            alert('현재 지원되지 않는 기능입니다.');
         }
       });
     });
@@ -32,7 +35,6 @@ function Map({ onRegionSelect }) {
   const centerMap = () => {
     const container = containerRef.current;
     if (container) {
-      // 지도 중앙에 고정할 좌표
       const fixedX = 550;
       const fixedY = 550;
       container.scrollLeft = fixedX - container.clientWidth / 2;

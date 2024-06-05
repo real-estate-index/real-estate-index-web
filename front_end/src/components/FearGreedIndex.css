@@ -19,20 +19,39 @@
 .bar-container {
   width: 100px;
   height: 65px;
-  border: 2px solid #000;
   position: relative;
 }
 
 .bar {
   width: 100%;
   height: 100%;
-  background-color: #F7F7F7;
+  transition: background-color 0.5s ease; /* Add smooth transition for bar color change */
+}
+
+.bar-0 {
+  background-color: #8E85FF;
+}
+
+.bar-1 {
+  background-color: #ca95fa;
+}
+
+.bar-2 {
+  background-color: #eaaef6; 
+}
+
+.bar-3 {
+  background-color: #f89ab9;
+}
+
+.bar-4 {
+  background-color: #ef7789;
 }
 
 .bar-filled {
-  width: 100%;
-  height: 100%;
-  background-color: #B9EDE9; /* 원하는 색상으로 설정 */
+  position: absolute;
+
+  transition: height 0.5s ease; /* Add smooth transition for bar fill */
 }
 
 .indicator {
@@ -42,6 +61,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  transition: bottom 0.5s ease; /* Add smooth transition for the indicator */
 }
 
 .triangle {
@@ -49,13 +69,13 @@
   height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-bottom: 60px solid #1A2B88; /* 삼각형 모양 */
+  border-bottom: 60px solid #7086BA; /* 삼각형 모양 */
 }
 
 .circle {
   width: 80px;
   height: 80px;
-  background-color: #1A2B88;
+  background-color: #7086BA;
   border-radius: 50%;
   margin-top: -10px; /* 삼각형과 원이 붙도록 조정 */
 }
