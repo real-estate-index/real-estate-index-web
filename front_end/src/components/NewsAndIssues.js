@@ -7,7 +7,7 @@ function NewsAndIssues() {
   const [activeCategory, setActiveCategory] = useState('news');
 
   useEffect(() => {
-    const apiUrl = '/api/news-and-issues';
+    const apiUrl = '/api/news_and_issues';
 
     const fetchData = async () => {
       try {
