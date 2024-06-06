@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'real_estate_app',
     'rest_framework',
     'corsheaders',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

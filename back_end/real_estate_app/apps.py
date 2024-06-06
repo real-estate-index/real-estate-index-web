@@ -10,8 +10,9 @@ class RealEstateAppConfig(AppConfig):
         from django.db.models.signals import post_migrate
 
         def initialize_data(sender, **kwargs):
+            utils.initializing()
             utils.news_api()
             utils.issues_crawling()
-            utils.calculate()
+            utils.read_data()
 
         post_migrate.connect(initialize_data, sender=self)
