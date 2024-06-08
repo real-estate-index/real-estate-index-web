@@ -31,15 +31,17 @@ function FearGreedIndex({ selectedDistrict }) {
     return `${location}px`;
   };
 
+  const barLabels = ["Extreme Greed", "Greed", "Neutral", "Fear", "Extreme Fear"];
+
   return (
     <div>
       <h2 className="text-style">Fear & Greed Index</h2>
       <div className="content">
         {indexValue !== null ? (
           <div className="bar-wrapper">
-            {[0, 1, 2, 3, 4].map((value, index) => (
+            {barLabels.map((label, index) => (
               <div className="bar-container" key={index}>
-                <div className={getBarClass(indexValue, index)} />
+                <div className={getBarClass(indexValue, index)}>{label}</div>
               </div>
             ))}
           </div>
