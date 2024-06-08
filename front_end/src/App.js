@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Map from './components/Map';
 import FearGreedIndex from './components/FearGreedIndex';
@@ -27,8 +27,9 @@ function App() {
   return (
     <div className="page-layout">
       <header className="header">
-        <h1 className="text-style">Real Estate Index</h1>
+        <h1 id="header-title" className="header-title">당신의 부동산 파트너, <span className="highlight">InhaUS</span></h1>
       </header>
+
       <div className="dashboard">
         <div className="widget fear-greed-index">
           <FearGreedIndex selectedDistrict={selectedDistrict} />
