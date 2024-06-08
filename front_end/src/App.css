@@ -1,3 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+.header-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 42px; /* 크기를 조금 더 키움 */
+  color: #1A2B88;
+  text-align: center;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-top: 30px;
+  display: inline-block;
+  position: relative;
+  letter-spacing: 4px; 
+}
+
+.header-title span {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.header-title .highlight {
+  animation: blink 1s infinite, fadeIn 1s forwards;
+}
+
+.header-title span:nth-child(1) { animation-delay: 0s; }
+.header-title span:nth-child(2) { animation-delay: 0.1s; }
+.header-title span:nth-child(3) { animation-delay: 0.2s; }
+/* 나머지 글자에 대해 점진적으로 딜레이 추가 */
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -5,12 +47,12 @@ body {
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #F8FAFB;
+    background: #0460ff05;
     height: 100%;
     overflow: hidden; /* 페이지 전체 스크롤 가능하도록 수정 */
-  }
-  
-  .page-layout {
+}
+
+.page-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,15 +60,15 @@ body {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto; /* 세로 스크롤 가능 */
-  }
-  
-  .header {
+}
+
+.header {
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
-  }
-  
-  .dashboard {
+}
+
+.dashboard {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto auto auto auto;
@@ -34,109 +76,108 @@ body {
     width: 100%;
     max-width: 1440px;
     height: auto;
-  }
-  
-  .widget {
+}
+
+.widget {
     background: #FFFFFF;
     border: 2px solid #ECEEF7;
     box-shadow: 0px 20px 50px rgba(220, 224, 249, 0.5);
     border-radius: 20px;
     padding: 20px;
     overflow: hidden; /* 내용이 넘치지 않도록 설정 */
-  }
-  
-  .fear-greed-index {
+}
+
+.fear-greed-index {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-  }
-  
-  .region-details {
+}
+
+.region-details {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-  }
-  
-  .map {
+}
+
+.map {
     grid-column: 2 / 3;
     grid-row: 1 / 3;
     overflow: hidden; /* 지도 안에서 스크롤 불가 */
-  }
-  
-  .news-and-issues {
+}
+
+.news-and-issues {
     grid-column: 3 / 4;
     grid-row: 1 / 3;
-  }
-  
-  .graph1, .graph2, .graph3, .graph4 {
+}
+
+.graph1, .graph2, .graph3, .graph4 {
     grid-column: 1 / 4;
     height: 250px; /* 그래프 컨테이너 높이 조정 */
-  }
-  
-  .graph3 {
+}
+
+.graph3 {
     grid-row: 3 / 4;
-  }
-  
-  .graph4 {
+}
+
+.graph4 {
     grid-row: 4 / 5;
-  }
-  
-  .text-style {
+}
+
+.text-style {
     font-family: 'Inter';
     font-weight: 700;
     font-size: 28px;
     color: #1A2B88;
-  }
-  
-  .map-container {
+}
+
+.map-container {
     position: relative;
     width: 100%;
     height: 100%;
-  }
-  
-  .title-container {
+}
+
+.title-container {
     text-align: center;
     background: #F8FAFB;
     padding: 10px 0;
     z-index: 1; /* 제목을 맨 위에 표시 */
-  }
-  
-  .rectangle {
+}
+
+.rectangle {
     width: 100%;
     height: 100%; /* 부모 요소의 높이를 설정 */
     box-sizing: border-box;
     overflow: auto;
     position: relative;
-  }
-  
-  /* 각 컴포넌트의 크기를 별도로 설정 */
-  .fear-greed-index .content {
+}
+
+/* 각 컴포넌트의 크기를 별도로 설정 */
+.fear-greed-index .content {
     width: 300px;
     height: 400px;
-  }
-  
-  .region-details .content {
+}
+
+.region-details .content {
     width: 300px;
     height: 200px;
-  }
-  
-  .map .content {
+}
+
+.map .content {
     width: 1000px;
     height: 800px;
     position: relative;
-  }
-  
-  .news-and-issues .content {
+}
+
+.news-and-issues .content {
     width: 100%;
     max-height: 800px;
     overflow-y: auto; /* 스크롤 추가 */
-  }
-  
-  .graph1 .content, .graph2 .content, .graph3 .content, .graph4 .content {
+}
+
+.graph1 .content, .graph2 .content, .graph3 .content, .graph4 .content {
     width: 100%;
     height: 66%;
-  }
-  
-  .graph-canvas {
+}
+
+.graph-canvas {
     width: 100% !important;
     height: 100% !important;
-  }
-  
+}
