@@ -24,31 +24,10 @@ function App() {
     setSelectedDistrict(districtId);
   };
 
-  useEffect(() => {
-    const headerTitle = document.getElementById('header-title');
-    const text = headerTitle.textContent;
-    headerTitle.innerHTML = '';
-
-    text.split('').forEach((char, index) => {
-      const span = document.createElement('span');
-      if (char === ' ') {
-        span.innerHTML = '&nbsp;';
-      } else {
-        span.textContent = char;
-      }
-      headerTitle.appendChild(span);
-      if (index >= 0 && index < 3) { // "당신의" 부분 강조
-        span.classList.add('highlight');
-      } else if (index > 19 && index < 25) { // "InhaUS" 부분 강조
-        span.classList.add('highlight');
-      }
-    });
-  }, []);
-
   return (
     <div className="page-layout">
       <header className="header">
-        <h1 id="header-title" className="header-title">당신의 첫 부동산, InhaUS와 함께</h1>
+        <h1 id="header-title" className="header-title">당신의 부동산 파트너, <span className="highlight">InhaUS</span></h1>
       </header>
 
       <div className="dashboard">
